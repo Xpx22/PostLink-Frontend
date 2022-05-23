@@ -1,0 +1,42 @@
+<h1 id="dashboard-text">Dashboard</h1>
+<div class="card" *ngIf="jobsList.length > 0">
+  <mat-card class="card-hover" (click)="onNavigateToJobDetails(job)" *ngFor="let job of jobsList">
+    <h2>Applied number of users:
+      <span> {{ job.appliedCount }} </span>
+    </h2>
+    <section class="table-container">
+      <div *ngIf="job.logoPath" id="company-logo-div">
+        <img [src]="job.logoPath" alt="company logo">
+      </div>
+
+      <div class="table-item-job">
+        <h3 class="bold-position-name"> {{ job.positionName }}</h3>
+        <span *ngIf="job.homeOffice">
+          Home Office
+          <mat-icon>home</mat-icon>
+        </span>
+
+        <span>{{job.salaryMin}}-{{job.salaryMax}} HUF</span>
+      </div>
+
+      <div class="table-item">
+        <div *ngIf="job.requiredSkills.length>0">
+          <span *ngFor="let skill of job.requiredSkills | slice:0:3;" class="main-skills">
+            {{ skill }}
+          </span>
+        </div>
+        <div *ngIf="job.requiredSkills.length<1">
+            <span>No required skills!</span>
+        </div>
+      </div>
+
+      <div class="table-item">
+        <span> {{ job.dateUploaded }} </span>
+      </div>
+    </section>
+  </mat-card>
+  <mat-paginator [length]="totalJobPosts" [pageSize]="jobsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)" id="dashboard-paginator"></mat-paginator>
+</div>
+
+<p *ngIf="jobsList.length < 1">No jobs posted...</p>
+

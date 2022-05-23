@@ -1,0 +1,172 @@
+.jobdetail-container{
+  display: flex;
+  margin-top: 2.5rem;
+}
+
+#job-card {
+  width: 50%;
+  display: grid;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.table-container{
+  margin-top: 1rem;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.table-item{
+  display: table-cell;
+  vertical-align: bottom;
+  width: 100%;
+  padding: 10px;
+}
+
+.company-name{
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+.hyperlink:hover{
+  text-decoration: underline;
+}
+.position-name{
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+#job-desc-span{
+  margin-top: 5px;
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+#buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.apply-btn, .bookmark-btn, .cancel-btn, .edit-button, .delete-button{
+  background-color: #ff4081;
+  padding: 0;
+  margin: 0;
+  color: white;
+  width: 15%;
+}
+
+.edit-btn-container{
+  text-align: center;
+}
+.edit-button{
+  width: 20%;
+  float: left;
+}
+.delete-button{
+  width: 20%;
+  float: right;
+}
+
+.material-icons{
+  font-size: 18px;
+  text-align: left;
+  line-height: 5px;
+  height: 5px;
+}
+
+.job-label{
+  font-size: large;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+.skills-list{
+  padding: 5px;
+}
+.skills-div{
+  margin-bottom: 4.5rem;
+}
+.job-div{
+  padding: 10px;
+}
+#job-desc{
+  padding: 20px;
+  margin-bottom: 2rem;
+}
+
+#p-text{
+  font-size: large;
+  color: white;
+}
+
+#comp-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+#comp-logo img{
+  height: 100px;
+  max-height: 100px;
+  width: auto;
+}
+
+.users-container{
+  // display: flex;
+  // flex-wrap: wrap;
+  width: 50%;
+
+}
+
+.card{
+  display: inline-block;
+  padding: 1.25rem;
+  margin: 0px 0px 5rem 10%;
+  width: 30%;
+}
+
+#status-text{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-text{
+  font-size: 1.1rem;
+  margin: 5px;
+}
+
+#usercv-link:hover{
+  text-decoration: underline;
+}
+
+#btn-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#accept-btn, #decline-btn{
+  padding: 0px;
+  width: 10%;
+}
+
+#accept-btn{
+  margin-right: 10px;
+}
+#decline-btn{
+  margin-left: 10px;
+}
+
+#zero-users h1{
+  text-align: center;
+  color: gray;
+  text-decoration: none;
+}
+
+mat-card-title h3{
+  font-size: 1.25rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}

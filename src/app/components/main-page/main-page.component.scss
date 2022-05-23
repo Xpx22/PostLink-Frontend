@@ -1,0 +1,154 @@
+.container .search-bar-container{
+  margin-top: 1rem;
+}
+
+.search-bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 0rem 0.5rem 0rem 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0px;
+}
+
+.pos-btn, .comp-btn, .loc-btn{
+  width: 100%;
+  color: black;
+}
+.comp-btn, .loc-btn{
+  margin-left: 10px;
+}
+
+#search-label{
+  color: #3f51b5;
+}
+
+.search-btn-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search-button{
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+#sort-by-btn{
+  padding: 0;
+  width: 10%;
+}
+.menu-item{
+  color: black;
+  font-size: 1rem;
+}
+.menu-item:hover{
+  background-color: #ff4081;
+}
+
+
+.job-input{
+  display: inline-block;
+}
+
+
+.filter-container{
+  margin-bottom: 2rem;
+}
+#filter-button {
+  margin-bottom: 10px;
+}
+
+.card {
+  text-align: center;
+}
+
+.table-container{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.card-hover {
+  width: 50%;
+  display: inline-block;
+  color: white;
+  margin-bottom: 4rem;
+  box-shadow: 0 0 20px #dddddd73;
+  transform: translateY(5px);
+  transition: .5s all ease;
+}
+.card-hover:hover{
+  background-color: #ff4081 !important;
+  transform: translateY(-10px);
+  transition: .5s all ease;
+  box-shadow: 0 3px 10px 0 rgb(196, 93, 187), 0 3px 10px 0 rgb(196, 93, 187);
+}
+.card-hover:active{
+  background-color: #dd2060 !important;
+  /* transform: translateY(-10px);
+  transition: .5s all ease;
+  box-shadow: 0 3px 10px 0 rgb(196, 93, 187), 0 3px 10px 0 rgb(196, 93, 187); */
+}
+
+#company-logo-div{
+  display: table-cell;
+  top: 0;
+  left: 0;
+  // margin-left: auto;
+  // margin-right: auto;
+  width: 60%;
+  padding-right: 10px;
+}
+#company-logo-div img{
+  height: 100px;
+  width: 100%;
+}
+
+#home-icon{
+  font-size: 16px;
+  text-align: left;
+  line-height: 5px;
+  height: 5px;
+}
+
+.bold-position-name{
+  font-weight: 500;
+  font-size: 20px;
+  margin: 1rem 0;
+}
+
+.table-item-job, .table-item{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+.table-item-job{
+  text-align: left;
+}
+.main-skills{
+  margin-right: 20px;
+}
+
+
+#no-job-p {
+  margin-top: 100px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  color: #bbbbbb;
+}
+
+p, .table-container{
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+#jobs-paginator{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

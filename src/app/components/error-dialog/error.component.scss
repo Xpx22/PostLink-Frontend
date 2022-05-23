@@ -1,0 +1,23 @@
+#message-title{
+  text-align: center;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.message-p{
+  font-size: 1rem;
+  color: red;
+}
+
+#dialog-button{
+  background-color: red;
+  color: white;
+  width: 25%;
+}
+
+#button-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,109 @@
+#job-card {
+  width: 60%;
+  height: 60%;
+  display: grid;
+  margin-bottom: 30px;
+}
+
+.table-container{
+  margin-top: 1rem;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.table-item{
+  display: table-cell;
+  vertical-align: bottom;
+  width: 100%;
+  padding: 10px;
+}
+
+.company-name{
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+.hyperlink:hover{
+  text-decoration: underline;
+}
+.position-name{
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+#job-desc-span{
+  margin-top: 5px;
+  text-align: justify;
+  text-justify: inter-character;
+}
+
+#buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.apply-btn, .bookmark-btn, .cancel-btn, .edit-button, .delete-button{
+  background-color: #ff4081;
+  padding: 0;
+  margin: 0;
+  color: white;
+  width: 15%;
+}
+
+.edit-btn-container{
+  text-align: center;
+}
+.edit-button{
+  width: 20%;
+  float: left;
+}
+.delete-button{
+  width: 20%;
+  float: right;
+}
+
+.material-icons{
+  font-size: 18px;
+  text-align: left;
+  line-height: 5px;
+  height: 5px;
+}
+
+.job-label{
+  font-size: large;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+.skills-list{
+  padding: 5px;
+}
+.skills-div{
+  margin-bottom: 4.5rem;
+}
+.job-div{
+  padding: 10px;
+}
+#job-desc{
+  padding: 20px;
+  margin-bottom: 2rem;
+}
+
+#p-text{
+  font-size: large;
+  color: white;
+}
+
+#comp-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+#comp-logo img{
+  height: 100px;
+  max-height: 100px;
+  width: auto;
+}

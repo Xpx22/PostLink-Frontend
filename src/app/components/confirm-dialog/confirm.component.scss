@@ -1,0 +1,31 @@
+#message-title{
+  text-align: center;
+  font-size: 1.5rem;
+  color: red;
+}
+
+#message-content{
+  font-size: 1rem;
+  text-align: center;
+  color: red;
+}
+
+#btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.confirm-btn, .cancel-btn{
+  padding: 0;
+  margin: 0;
+  color: white;
+  width: 25%;
+}
+
+.confirm-btn{
+  background-color: red;
+}
+.cancel-btn{
+  background-color: rgb(155, 153, 153);
+}

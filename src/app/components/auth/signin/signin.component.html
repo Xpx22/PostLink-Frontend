@@ -1,0 +1,35 @@
+<!-- <h1 class="page-title">Sign Up</h1> -->
+
+<div class="container" *ngIf="!isLoading">
+  <div class="login-container">
+    <mat-card id="signin-shadow">
+      <form (submit)="onSignIn(loginForm)" #loginForm="ngForm">
+      <mat-form-field appearance="standard" color="accent" class="signin-field">
+        <mat-label><mat-icon>email</mat-icon> E-mail:</mat-label>
+        <input matInput type="email" name="email" ngModel placeholder="E-mail:" #emailInput="ngModel" required email>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="standard" color="accent" class="signin-field">
+        <mat-label><mat-icon>lock</mat-icon> Password:</mat-label>
+        <input matInput type="password" name="password" ngModel placeholder="Password:" #passwordInput="ngModel" required>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <div>
+        <mat-slide-toggle name="isEmployerToggle" ngModel>Sign In as Company</mat-slide-toggle>
+      </div>
+      <button id="login-button" mat-raised-button type="submit">Sign In</button>
+      <div id="signup-footer">
+        <p id="login-span">Don't have an account?
+          <a id="register-link" routerLink="/signup">Sign Up</a>
+           here
+        </p>
+      </div>
+    </form>
+  </mat-card>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+  <span class="loading-text">Signing in...</span>
+</div>

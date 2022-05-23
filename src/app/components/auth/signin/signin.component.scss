@@ -1,0 +1,51 @@
+.login-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signin-field{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-label{
+  color: white;
+}
+
+#login-button {
+  background-color: #ff4081;
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+}
+#login-span{
+  text-align: center;
+}
+#register-link {
+  text-decoration: underline;
+  color: #ff4081;
+}
+
+#signin-shadow{
+  width: 100%;
+}
+
+#signup-footer{
+  margin-top: 1rem;
+  text-align: center;
+}
+#signin-shadow{
+  box-shadow: 0 5px 10px 0 rgb(21, 49, 179), 0 5px 10px 0 rgb(21, 49, 179);
+}
+/* .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: white;
+}
+mat-slide-toggle{
+  float: right;
+}
+ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: lightgrey
+} */
+

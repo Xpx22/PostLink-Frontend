@@ -1,0 +1,89 @@
+<h1 class="page-title">Post a job</h1>
+
+<div class="container" *ngIf="!isLoading">
+  <mat-card id="create-job-card">
+      <form (submit)="onCreatePost(jobpostForm)" #jobpostForm="ngForm" (keydown.enter)="$event.preventDefault()">
+        <div id="post-name">
+          <mat-form-field appearance="standard" color="warn">
+            <mat-label>Position Name: (required)</mat-label>
+            <input matInput type="text" name="positionName" ngModel required>
+            <mat-error>Please enter a valid position name</mat-error>
+          </mat-form-field>
+        </div>
+        <div id="salary">
+          <div class="flex-item">
+            <mat-form-field appearance="standard" color="accent">
+              <mat-label>Salary Minimum: (required)</mat-label>
+              <input matInput type="number" name="salaryMin" ngModel required min="0">
+              <mat-error>Invalid salary minimum</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="flex-item">
+            <mat-form-field appearance="standard" color="accent">
+              <mat-label>Salary maximum: (required)</mat-label>
+              <input matInput type="number" name="salaryMax" ngModel required min="0">
+              <mat-error>Invalid salary maximum</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <mat-radio-group (change)="setPreference()" color="accent">
+            <mat-radio-button checked="true">Home Office</mat-radio-button>
+            <mat-radio-button value="false">No Home Office</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- <section>
+          <mat-checkbox class="example-margin">Checked</mat-checkbox>
+          <mat-checkbox class="example-margin">Indeterminate</mat-checkbox>
+        </section> -->
+
+        <div class="table-job-container">
+          <div class="table-job-item">
+            <mat-label>Job Description: (required*)</mat-label>
+            <textarea class="text-area-padding" matInput rows="10" cols="10" ngModel name="jobDescription"></textarea>
+          </div>
+
+          <div class="table-job-item">
+            <mat-label>Required Skills: (separated by commas or enter)</mat-label>
+            <mat-form-field class="required-chip-list" appearance="standard" color="accent">
+              <mat-label>Skills:</mat-label>
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let skill of requiredSkills" (removed)="removeReq(skill)">
+                  {{skill}}
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+                <input [matChipInputFor]="chipList"
+                       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                       (matChipInputTokenEnd)="addReq($event)">
+              </mat-chip-list>
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-label>Good to have skills: (separated by commas or enter)</mat-label>
+            <mat-form-field class="required-chip-list" appearance="standard" color="accent">
+              <mat-label>Skills:</mat-label>
+              <mat-chip-list #chipListGood>
+                <mat-chip *ngFor="let skill of goodToHaveSkills" (removed)="removeGood(skill)">
+                  {{skill}}
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+                <input [matChipInputFor]="chipListGood"
+                       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                       (matChipInputTokenEnd)="addGood($event)">
+              </mat-chip-list>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div id="buttons-container">
+          <button mat-raised-button class="button-item" type="submit">Create</button>
+          <button mat-raised-button class="button-item" routerLink="/">Cancel</button>
+        </div>
+      </form>
+  </mat-card>
+</div>

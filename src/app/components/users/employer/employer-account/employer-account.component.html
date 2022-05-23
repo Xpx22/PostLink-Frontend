@@ -1,0 +1,52 @@
+<div class="container">
+  <mat-card id="company-card" *ngIf="!isLoading">
+    <form (submit)="onSubmitCompanyDetails(employerForm)" #employerForm="ngForm">
+      <div class="field-text">
+        <mat-form-field appearance="standard" color="accent">
+          <mat-label><mat-icon>assignment_ind</mat-icon> Company name:</mat-label>
+          <input matInput type="text" name="companyName" ngModel required>
+          <mat-error>Please enter a valid company name</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="field-text">
+        <mat-form-field appearance="standard" color="accent">
+          <mat-hint>example: +36301234567</mat-hint>
+          <mat-label><mat-icon>phone</mat-icon> Phone number:</mat-label>
+          <input matInput type="text" name="phoneNumber" ngModel required placeholder="example: +36301234567">
+          <mat-error>Please enter a valid phone number</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="field-text">
+        <mat-form-field appearance="standard" color="accent">
+          <mat-hint>example: www.example.com</mat-hint>
+          <mat-label><mat-icon>language</mat-icon> Website:</mat-label>
+          <input matInput type="text" name="website" ngModel placeholder="example: www.example.com">
+        </mat-form-field>
+      </div>
+      <div class="field-text location-container">
+        <mat-form-field appearance="standard" color="accent" id="city-field">
+          <mat-label><mat-icon>location_city</mat-icon> City:</mat-label>
+          <input matInput type="text" name="city" ngModel placeholder="example: Budapest">
+        </mat-form-field>
+        <mat-form-field appearance="standard" color="accent" id="country-field">
+          <mat-label><mat-icon>public</mat-icon> Country:</mat-label>
+          <input matInput type="text" name="country" ngModel placeholder="example: Hungary">
+        </mat-form-field>
+      </div>
+      <p id="image-hint">We recommend a 16:9 aspect ratio logo for the best appearance*</p>
+      <div id="image-upload" class="field-text">
+        <button mat-stroked-button id="upload-button" type="button" (click)="chooseImage.click()">Upload logo</button>
+        <!-- <button mat-stroked-button id="delete-button" type="button" (click)="deleteImage()" *ngIf="imgPreviewPath">Delete image</button> -->
+        <input type="file" #chooseImage (change)="onChooseImage($event)">
+      </div>
+      <div id="img-preview" *ngIf="imgPreviewPath">
+        <img [src]="imgPreviewPath" alt="company logo">
+      </div>
+      <div id="buttons-container">
+        <button mat-raised-button class="save-btn" type="submit">Save</button>
+        <button mat-raised-button class="cancel-btn" routerLink="/">Cancel</button>
+      </div>
+    </form>
+  </mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>

@@ -1,0 +1,101 @@
+.page-title{
+  margin: 2rem 0;
+  color: #3F51B5;
+  text-align: center;
+  font-size: 3rem;
+}
+
+#create-job-card{
+  width: 80%;
+  height: 80%;
+  margin-bottom: 30px;
+}
+
+mat-form-field{
+  width: 100%;
+  color: white;
+  border-color: white;
+}
+
+.required-chip-list{
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 5px;
+}
+.mat-chip.mat-standard-chip{
+  background-color: white;
+}
+
+#post-name{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mat-chip.mat-standard-chip .mat-chip-remove{
+  opacity: 1;
+}
+
+mat-icon{
+  color: white;
+  opacity: 1 !important;
+}
+
+#salary{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.flex-item{
+  width: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+mat-radio-button {
+  margin-right: 15px;
+  color: white;
+}
+mat-label{
+  color: white;
+}
+
+.table-job-container{
+  margin-top: 20px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.table-job-item{
+  display: table-cell;
+  width: 100%;
+  padding: 5px;
+}
+
+textarea{
+  border: solid 1px white;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.text-area-padding{
+  padding: 20px;
+  caret-color: white;
+  border-radius: 5px;
+}
+
+#buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.button-item{
+  margin-right: 50px;
+  margin-left: 50px;
+  margin: 10px 50px;
+  background-color: #ff4081;
+  color: white;
+}

@@ -1,0 +1,95 @@
+#dashboard-text{
+  margin: 2rem 0;
+  color: #3F51B5;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.card {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.card-hover {
+  width: 60%;
+  display: inline-block;
+  color: white;
+  margin-bottom: 4.5rem;
+  box-shadow: 0 0 20px #dddddd73;
+  transform: translateY(5px);
+  transition: .5s all ease;
+}
+.card-hover:hover{
+  background-color: #ff4081 !important;
+  transform: translateY(-10px);
+  transition: .5s all ease;
+  box-shadow: 0 3px 10px 0 rgb(196, 93, 187), 0 3px 10px 0 rgb(196, 93, 187);
+}
+.card-hover:active{
+  background-color: #dd2060 !important;
+}
+
+.material-icons{
+  font-size: 16px;
+  text-align: left;
+  line-height: 5px;
+  height: 5px;
+}
+
+.bold-position-name{
+  font-weight: 500;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+#company-logo-div{
+  display: table-cell;
+  top: 0;
+  left: 0;
+  width: 50%;
+  padding: 5px;
+}
+#company-logo-div img{
+  height: 100px;
+  width: 100%;
+}
+
+.table-container{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.table-item-job, .table-item{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+.table-item-job{
+  text-align: left;
+}
+.main-skills{
+  margin-right: 20px;
+}
+
+p {
+  margin-top: 100px;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  color: #bbbbbb;
+}
+
+p, .table-container{
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+#dashboard-paginator{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

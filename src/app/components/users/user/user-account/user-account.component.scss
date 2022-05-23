@@ -1,0 +1,66 @@
+#company-card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: auto;
+}
+
+.field-text{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#upload-button, #delete-button{
+  margin: 1rem 0;
+  background-color: #ff4081;
+}
+input[type="file"]{
+  display: none;
+}
+
+#cv-upload{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-form-field{
+  width: 100%;
+  color: white;
+  border-color: white;
+}
+mat-icon{
+  color: white;
+  opacity: 1 !important;
+}
+mat-hint{
+  color: white;
+}
+mat-label{
+  color: white;
+}
+
+#buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.save-btn, .cancel-btn{
+  background-color: #ff4081;
+  color: white;
+  width: 15%;
+  margin: 0;
+  padding: 0;
+}
+
+.picked-file{
+  text-align: center;
+}
+
+#filepath-link{
+  text-decoration: underline;
+}

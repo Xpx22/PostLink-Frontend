@@ -1,0 +1,73 @@
+<div class="container search-bar-container">
+  <form class="search-bar" (submit)="searchJob()" #searchJobForm="ngForm" (keydown.enter)="searchJob()">
+    <mat-form-field class="pos-btn" appearance="outline" color="primary">
+      <mat-label id="search-label">
+        <mat-icon>work</mat-icon> Positions...
+      </mat-label>
+      <input type="text" matInput placeholder="E.g: Developer" name="positionInput" [ngModel]="position">
+    </mat-form-field>
+    <mat-form-field class="comp-btn" appearance="outline" color="primary">
+      <mat-label id="search-label">
+        <mat-icon>business</mat-icon> Companies...
+      </mat-label>
+      <input type="text" matInput placeholder="E.g: Oracle" name="companyInput" [ngModel]="company">
+    </mat-form-field>
+    <mat-form-field class="loc-btn" appearance="outline" color="primary">
+      <mat-label id="search-label">
+        <mat-icon>location_on</mat-icon> Location
+      </mat-label>
+      <input type="text" matInput placeholder="E.g: Budapest,Hungary" name="locationInput" [ngModel]="location">
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="search-btn-container">
+  <button mat-raised-button color="accent" id="search-button" (click)="searchJob()">Search</button>
+</div>
+
+<div class="container filter-container">
+  <button mat-raised-button color="accent" id="sort-by-btn" [matMenuTriggerFor]="menu">Sort By: </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngFor="let sortbyitem of sortByItems">
+      <button mat-menu-item class="menu-item" (click)="sortBy(sortbyitem.value)"> {{ sortbyitem.name }} </button>
+    </ng-container>
+  </mat-menu>
+</div>
+
+<div class="card" *ngIf="jobsList.length > 0">
+  <mat-card class="card-hover" (click)="onNavigateToJobDetails(job)" *ngFor="let job of jobsList">
+    <section class="table-container">
+      <div *ngIf="job.logoPath" id="company-logo-div">
+          <img [src]="job.logoPath" alt="company logo">
+      </div>
+      <div class="table-item-job">
+        <h3 class="bold-position-name"> {{ job.positionName }}</h3>
+        <span *ngIf="job.homeOffice">
+          Home Office<mat-icon id="home-icon">home</mat-icon>
+        </span>
+        <span>{{job.salaryMin}}-{{job.salaryMax}} HUF</span><br>
+        <span>{{job.city}}, {{job.country}}</span>
+      </div>
+
+      <div class="table-item">
+        <div *ngIf="job.requiredSkills.length > 0">
+          <span *ngFor="let skill of job.requiredSkills | slice:0:3;" class="main-skills">
+            {{ skill }}
+          </span>
+        </div>
+        <div *ngIf="job.requiredSkills.length < 1">
+            <span>No required skills!</span>
+        </div>
+      </div>
+
+      <div class="table-item">
+        <span> {{ job.dateUploaded }} </span>
+      </div>
+
+    </section>
+  </mat-card>
+  <mat-paginator [length]="totalJobPosts" [pageSize]="jobsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)" id="jobs-paginator"></mat-paginator>
+</div>
+
+<p *ngIf="jobsList.length < 1" id="no-job-p">No jobs posted...</p>
+

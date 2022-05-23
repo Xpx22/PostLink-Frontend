@@ -1,0 +1,80 @@
+<div class="container">
+  <mat-card id="job-card">
+    <div class="edit-btn-container" *ngIf="isCreator">
+      <button mat-raised-button class="button-item edit-button" (click)="editJob()">Edit job</button>
+      <button mat-raised-button class="button-item delete-button" (click)="deleteJob()">Delete job</button>
+    </div>
+    <div id="comp-logo" *ngIf="job.logoPath">
+      <img [src]="job.logoPath" alt="company logo" id="company-logo">
+    </div>
+    <div class="table-container">
+
+      <div class="table-item">
+        <div class="job-div">
+          <h3 class="company-name">
+            {{ job.companyName }}
+          </h3>
+          <a class="hyperlink" href="http://{{job.website}}">
+            {{ job.website }}
+          </a>
+        </div>
+        <div class="job-div">
+            <h3 class="position-name">
+              {{ job.positionName }}
+            </h3>
+        </div>
+        <div class="job-div">
+          <p class="name-span">
+            {{job.city}}, {{job.country}}<mat-icon>public</mat-icon>
+          </p>
+          <p class="name-span">
+            Salary: {{job.salaryMin}} - {{job.salaryMax}} HUF
+          </p>
+          <p *ngIf="job.homeOffice">
+            Home Office<mat-icon>home</mat-icon>
+          </p>
+          <p class="name-span">
+            {{ job.email }}<mat-icon>email</mat-icon>
+          </p>
+          <p class="name-span">
+            {{ job.phoneNumber }}<mat-icon>phone</mat-icon>
+          </p>
+        </div>
+
+      </div>
+      <div class="table-item">
+        <mat-label class="job-label">Required Skills:</mat-label>
+        <div class="skills-div" *ngIf="job.requiredSkills">
+          <mat-chip-list>
+            <mat-chip class="skills-list" *ngFor="let rskill of job.requiredSkills">
+              {{ rskill }}
+            </mat-chip>
+          </mat-chip-list>
+          <h4 *ngIf="!job.requiredSkills"> No required skills!</h4>
+        </div>
+
+        <mat-label class="job-label">Good to have Skills:</mat-label>
+        <div class="skills-div">
+          <mat-chip-list>
+            <mat-chip class="skills-list" *ngFor="let gskill of job.goodToHaveSkills">
+              {{ gskill }}
+            </mat-chip>
+          </mat-chip-list>
+          <!-- <h4 *ngIf="!job.goodToHaveSkills"> No required skills!</h4> -->
+        </div>
+      </div>
+    </div>
+
+    <div id="job-desc">
+      <mat-label class="job-label">Job Description: </mat-label>
+      <p id="job-desc-span">
+        {{ job.description }}
+      </p>
+    </div>
+        <div id="buttons-container">
+          <button mat-raised-button class="apply-btn" (click)="applyForJob()">Apply</button>
+          <button mat-raised-button class="bookmark-btn" (click)="bookmarkJob()">Bookmark</button>
+          <button mat-raised-button class="cancel-btn" routerLink="/">Cancel</button>
+        </div>
+  </mat-card>
+</div>
