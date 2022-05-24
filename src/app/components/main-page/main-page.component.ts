@@ -39,13 +39,16 @@ export class MainPageComponent implements OnInit, OnDestroy{
     const pos = localStorage.getItem("position");
     const com = localStorage.getItem("company");
     const loc = localStorage.getItem("location");
+    const sort = localStorage.getItem("sortby");
+    let sortbyParam = "";
     if(perPage && Number.isInteger(+perPage)){
       this.jobsPerPage = +perPage;
     }
     if(pos){ this.position = pos; }
     if(com){ this.company = com; }
     if(loc){ this.location = loc; }
-    this.jobsService.getJobPosts(this.jobsPerPage, this.currentPage, this.position, this.company, this.location);
+    if(sort){ sortbyParam = sort; }
+    this.jobsService.getJobPosts(this.jobsPerPage, this.currentPage, this.position, this.company, this.location, sortbyParam);
     this.jobsSubscription = this.jobsService.getJobPostUpdateListener().subscribe( (posts: {jobs: JobPost[], jobsCount: number}) => {
       this.totalJobPosts = posts.jobsCount;
       this.jobsList = posts.jobs;
