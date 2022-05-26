@@ -26,17 +26,6 @@ const routes: Routes = [
   { path: "signup", component: SignUpComponent},
   { path: "signin", component: SignInComponent, canActivate: [OneLoginGuard] },
   { path: "jobdetails/:id", component: JobDetailComponent },
-  // {
-  //   path: "users",
-  //   component: UserProfileComponent,
-  //   canActivate: [UserAuthGuard],
-  //   children: [
-  //     { path: "profile", component: UserProfileComponent, canActivate: [UserAuthGuard] },
-  //     { path: "account", component: UserAccountComponent, canActivate: [UserAuthGuard] },
-  //     { path: "dashboard", component: UserDashboardComponent, canActivate: [UserAuthGuard] },
-  //     { path: "bookmarks", component: UserBookmarkComponent, canActivate: [UserAuthGuard] },
-  //   ]
-  // },
   { path: "users/account", component: UserAccountComponent, canActivate: [UserAuthGuard] },
   { path: "users/dashboard", component: UserDashboardComponent, canActivate: [UserAuthGuard] },
   { path: "users/bookmarks", component: UserBookmarkComponent, canActivate: [UserAuthGuard] },
