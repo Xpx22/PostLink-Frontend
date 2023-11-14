@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "PostLink:build:production"
+              "browserTarget": "PostLink:build:production"
             },
             "development": {
-              "buildTarget": "PostLink:build:development"
+              "browserTarget": "PostLink:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "PostLink:build"
+            "browserTarget": "PostLink:build"
           }
         },
         "test": {
