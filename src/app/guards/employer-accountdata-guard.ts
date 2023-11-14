@@ -1,13 +1,13 @@
 import { Injectable, OnDestroy, OnInit } from "@angular/core";
 import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable, Subscription } from "rxjs";
 
 import { AccountDataService } from "../services/account-data.service";
 import { ErrorDialog } from "../components/error-dialog/error.component";
 
 @Injectable()
-export class EmployerAccountDataGuard implements CanActivate{
+export class EmployerAccountDataGuard {
   constructor(
     private accountDataService: AccountDataService,
     private router: Router,

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
 
 
@@ -9,7 +9,7 @@ import { JobsService } from "../services/jobs.service";
 import { AuthService } from "../services/auth.service";
 
 @Injectable()
-export class EmployerAuthorizeGuard implements CanActivate{
+export class EmployerAuthorizeGuard {
   constructor(
     private authService: AuthService,
     private router: Router,
