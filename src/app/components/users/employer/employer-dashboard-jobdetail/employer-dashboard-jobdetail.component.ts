@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
 import { ConfirmDialog } from '../../../confirm-dialog/confirm.component';
 import { AccountDataService } from '../../../../services/account-data.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 
 @Component({
   templateUrl: './employer-dashboard-jobdetail.component.html',

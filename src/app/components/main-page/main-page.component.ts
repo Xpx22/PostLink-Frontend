@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { PageEvent } from "@angular/material/paginator";
+import { LegacyPageEvent as PageEvent } from "@angular/material/legacy-paginator";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 

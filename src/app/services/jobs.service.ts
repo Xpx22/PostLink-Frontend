@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 import { Injectable } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import * as moment from "moment";
 
 import { JobPost } from "../models/job.model";
@@ -10,7 +10,7 @@ import { AuthService } from "./auth.service";
 import { ErrorDialog } from "../components/error-dialog/error.component";
 import { SuccessDialog } from "../components/success-dialog/success.component";
 import { ConfirmDialog } from "../components/confirm-dialog/confirm.component";
-import { MatSnackBar } from "@angular/material/snack-bar";
+import { MatLegacySnackBar as MatSnackBar } from "@angular/material/legacy-snack-bar";
 import { environment } from "../../environments/environment";
 
 const JOBS_BACKEND_URL = environment.apiUrl + "/posts/";

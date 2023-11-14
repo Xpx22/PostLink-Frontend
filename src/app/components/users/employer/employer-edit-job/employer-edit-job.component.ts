@@ -1,10 +1,10 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from '@angular/material/chips';
+import {MatLegacyChipInputEvent as MatChipInputEvent} from '@angular/material/legacy-chips';
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 
 import { JobPost } from "../../../../models/job.model";
 import { JobsService } from "../../../../services/jobs.service";

@@ -1,11 +1,11 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from '@angular/material/chips';
+import {MatLegacyChipInputEvent as MatChipInputEvent} from '@angular/material/legacy-chips';
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
 import { JobPost } from "../../../models/job.model";
 import { JobsService } from "../../../services/jobs.service";
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { ErrorDialog } from '../../error-dialog/error.component';
 
 @Component({
