@@ -42,59 +42,53 @@ import { ConfirmDialog } from './components/confirm-dialog/confirm.component';
 import { EmployerDashboardJobDetailComponent } from './components/users/employer/employer-dashboard-jobdetail/employer-dashboard-jobdetail.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainPageComponent,
-    SignUpComponent,
-    SignInComponent,
-    UserAccountComponent,
-    UserDashboardComponent,
-    UserBookmarkComponent,
-    EmployerAccountComponent,
-    EmployerDashboardComponent,
-    EmployerEditJobComponent,
-    //JobsListComponent,
-    JobDetailComponent,
-    JobCreateComponent,
-    ErrorDialog,
-    SuccessDialog,
-    ConfirmDialog,
-    EmployerDashboardJobDetailComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatButtonModule,
-    MatInputModule,
-    MatMenuModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    MatSlideToggleModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatChipsModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatListModule
-  ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
-  ],
-  bootstrap: [AppComponent],
-  entryComponents: [ErrorDialog, SuccessDialog, ConfirmDialog] //for Offline Template Compiler
-  /*
-  Offline template compiler (OTC) only builds components that are actually used.
-  If components aren't used in templates directly the OTC can't know whether they need to be compiled.
-  With entryComponents you can tell the OTC to also compile this components so they are available at runtime.
-  */
+    declarations: [
+        AppComponent,
+        MainPageComponent,
+        SignUpComponent,
+        SignInComponent,
+        UserAccountComponent,
+        UserDashboardComponent,
+        UserBookmarkComponent,
+        EmployerAccountComponent,
+        EmployerDashboardComponent,
+        EmployerEditJobComponent,
+        //JobsListComponent,
+        JobDetailComponent,
+        JobCreateComponent,
+        ErrorDialog,
+        SuccessDialog,
+        ConfirmDialog,
+        EmployerDashboardJobDetailComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatButtonModule,
+        MatInputModule,
+        MatMenuModule,
+        MatRadioModule,
+        MatCheckboxModule,
+        MatSlideToggleModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatPaginatorModule,
+        MatProgressSpinnerModule,
+        MatChipsModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatListModule
+    ],
+    providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
