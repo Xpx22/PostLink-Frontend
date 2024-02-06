@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
 
@@ -7,6 +6,7 @@ import { Observable } from "rxjs";
 import { ErrorDialog } from "../components/error-dialog/error.component";
 import { JobsService } from "../services/jobs.service";
 import { AuthService } from "../services/auth.service";
+import { MatDialog } from "@angular/material/dialog";
 
 @Injectable()
 export class EmployerAuthorizeGuard {
