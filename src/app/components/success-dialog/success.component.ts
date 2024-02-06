@@ -1,9 +1,12 @@
 import { Component, Inject } from "@angular/core";
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from "@angular/material/legacy-dialog";
+import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogModule } from "@angular/material/legacy-dialog";
+import { MatLegacyButtonModule } from "@angular/material/legacy-button";
 
 @Component({
-  templateUrl: "./success.component.html",
-  styleUrls: ["./success.component.scss"]
+    templateUrl: "./success.component.html",
+    styleUrls: ["./success.component.scss"],
+    standalone: true,
+    imports: [MatLegacyDialogModule, MatLegacyButtonModule]
 })
 
 export class SuccessDialog{

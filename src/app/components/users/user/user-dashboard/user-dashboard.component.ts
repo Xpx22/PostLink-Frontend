@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import { LegacyPageEvent as PageEvent } from '@angular/material/legacy-paginator';
+import { LegacyPageEvent as PageEvent, MatLegacyPaginatorModule } from '@angular/material/legacy-paginator';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 
 import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyCardModule } from '@angular/material/legacy-card';
+import { NgIf, NgFor, SlicePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.scss']
+    selector: 'app-user-dashboard',
+    templateUrl: './user-dashboard.component.html',
+    styleUrls: ['./user-dashboard.component.scss'],
+    standalone: true,
+    imports: [NgIf, NgFor, MatLegacyCardModule, MatIconModule, MatLegacyPaginatorModule, SlicePipe]
 })
 export class UserDashboardComponent {
   jobsList: any[] = [];

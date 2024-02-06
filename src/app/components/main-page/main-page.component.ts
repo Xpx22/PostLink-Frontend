@@ -1,15 +1,24 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { NgForm } from "@angular/forms";
-import { LegacyPageEvent as PageEvent } from "@angular/material/legacy-paginator";
+import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { LegacyPageEvent as PageEvent, MatLegacyPaginatorModule } from "@angular/material/legacy-paginator";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 
 import { JobPost } from "../../models/job.model";
 import { JobsService } from "../../services/jobs.service";
+import { MatLegacyCardModule } from "@angular/material/legacy-card";
+import { NgFor, NgIf, SlicePipe } from "@angular/common";
+import { MatLegacyMenuModule } from "@angular/material/legacy-menu";
+import { MatLegacyButtonModule } from "@angular/material/legacy-button";
+import { MatLegacyInputModule } from "@angular/material/legacy-input";
+import { MatIconModule } from "@angular/material/icon";
+import { MatLegacyFormFieldModule } from "@angular/material/legacy-form-field";
 
 @Component({
-  templateUrl: "./main-page.component.html",
-  styleUrls: ["./main-page.component.scss"]
+    templateUrl: "./main-page.component.html",
+    styleUrls: ["./main-page.component.scss"],
+    standalone: true,
+    imports: [ReactiveFormsModule, FormsModule, MatLegacyFormFieldModule, MatIconModule, MatLegacyInputModule, MatLegacyButtonModule, MatLegacyMenuModule, NgFor, NgIf, MatLegacyCardModule, MatLegacyPaginatorModule, SlicePipe]
 })
 
 export class MainPageComponent implements OnInit, OnDestroy{

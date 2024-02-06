@@ -1,17 +1,27 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatLegacyChipInputEvent as MatChipInputEvent} from '@angular/material/legacy-chips';
+import { MatLegacyChipInputEvent as MatChipInputEvent, MatLegacyChipsModule } from '@angular/material/legacy-chips';
 import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { JobPost } from "../../../models/job.model";
 import { JobsService } from "../../../services/jobs.service";
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { ErrorDialog } from '../../error-dialog/error.component';
+import { RouterLink } from '@angular/router';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyRadioModule } from '@angular/material/legacy-radio';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyCardModule } from '@angular/material/legacy-card';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: "app-post-create",
-  templateUrl: "./job-create.component.html",
-  styleUrls: ["./job-create.component.scss"]
+    selector: "app-post-create",
+    templateUrl: "./job-create.component.html",
+    styleUrls: ["./job-create.component.scss"],
+    standalone: true,
+    imports: [NgIf, MatLegacyCardModule, ReactiveFormsModule, FormsModule, MatLegacyFormFieldModule, MatLegacyInputModule, MatLegacyRadioModule, MatLegacyChipsModule, NgFor, MatIconModule, MatLegacyButtonModule, RouterLink]
 })
 
 export class JobCreateComponent {

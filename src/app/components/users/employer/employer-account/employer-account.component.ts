@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Subscription } from 'rxjs';
 
@@ -7,10 +7,20 @@ import { AccountDataService } from '../../../../services/account-data.service';
 import { ErrorDialog } from '../../../error-dialog/error.component';
 import { Employer } from '../../../../models/employer.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { MatLegacyProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
+import { RouterLink } from '@angular/router';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyCardModule } from '@angular/material/legacy-card';
+import { NgIf } from '@angular/common';
 
 @Component({
-  templateUrl: './employer-account.component.html',
-  styleUrls: ['./employer-account.component.scss']
+    templateUrl: './employer-account.component.html',
+    styleUrls: ['./employer-account.component.scss'],
+    standalone: true,
+    imports: [NgIf, MatLegacyCardModule, ReactiveFormsModule, FormsModule, MatLegacyFormFieldModule, MatIconModule, MatLegacyInputModule, MatLegacyButtonModule, RouterLink, MatLegacyProgressSpinnerModule]
 })
 export class EmployerAccountComponent implements OnInit, OnDestroy{
   isLoading = false;

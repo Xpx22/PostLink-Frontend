@@ -1,15 +1,25 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { Subscription } from "rxjs";
 
 import { AuthService } from "../../../services/auth.service";
+import { MatLegacyProgressSpinnerModule } from "@angular/material/legacy-progress-spinner";
+import { MatLegacyButtonModule } from "@angular/material/legacy-button";
+import { MatLegacySlideToggleModule } from "@angular/material/legacy-slide-toggle";
+import { MatLegacyInputModule } from "@angular/material/legacy-input";
+import { MatIconModule } from "@angular/material/icon";
+import { MatLegacyFormFieldModule } from "@angular/material/legacy-form-field";
+import { MatLegacyCardModule } from "@angular/material/legacy-card";
+import { NgIf } from "@angular/common";
 
 @Component({
-  templateUrl: "./signin.component.html",
-  styleUrls: ["./signin.component.scss"],
-  encapsulation: ViewEncapsulation.None
+    templateUrl: "./signin.component.html",
+    styleUrls: ["./signin.component.scss"],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
+    imports: [NgIf, MatLegacyCardModule, ReactiveFormsModule, FormsModule, MatLegacyFormFieldModule, MatIconModule, MatLegacyInputModule, MatLegacySlideToggleModule, MatLegacyButtonModule, RouterLink, MatLegacyProgressSpinnerModule]
 })
 
 export class SignInComponent implements OnInit, OnDestroy{

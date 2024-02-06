@@ -1,17 +1,25 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { ErrorDialog } from '../../error-dialog/error.component';
 import { JobPost } from '../../../models/job.model';
 import { JobsService } from '../../../services/jobs.service';
 import { ConfirmDialog } from '../../confirm-dialog/confirm.component';
+import { MatLegacyChipsModule } from '@angular/material/legacy-chips';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { NgIf, NgFor } from '@angular/common';
+import { MatLegacyCardModule } from '@angular/material/legacy-card';
 
 @Component({
-  selector: "app-job-details",
-  templateUrl: './job-detail.component.html',
-  styleUrls: ['./job-detail.component.scss']
+    selector: "app-job-details",
+    templateUrl: './job-detail.component.html',
+    styleUrls: ['./job-detail.component.scss'],
+    standalone: true,
+    imports: [MatLegacyCardModule, NgIf, MatLegacyButtonModule, MatIconModule, MatLegacyFormFieldModule, MatLegacyChipsModule, NgFor, RouterLink]
 })
 export class JobDetailComponent implements OnInit, OnDestroy{
   job!: JobPost;

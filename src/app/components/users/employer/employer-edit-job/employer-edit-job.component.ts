@@ -1,18 +1,27 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatLegacyChipInputEvent as MatChipInputEvent} from '@angular/material/legacy-chips';
+import { MatLegacyChipInputEvent as MatChipInputEvent, MatLegacyChipsModule } from '@angular/material/legacy-chips';
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { NgForm } from "@angular/forms";
-import { ActivatedRoute } from '@angular/router';
+import { NgForm, ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 
 import { JobPost } from "../../../../models/job.model";
 import { JobsService } from "../../../../services/jobs.service";
 import { ErrorDialog } from '../../../error-dialog/error.component';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyRadioModule } from '@angular/material/legacy-radio';
+import { MatLegacyInputModule } from '@angular/material/legacy-input';
+import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyCardModule } from '@angular/material/legacy-card';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  templateUrl: "./employer-edit-job.component.html",
-  styleUrls: ["./employer-edit-job.component.scss"]
+    templateUrl: "./employer-edit-job.component.html",
+    styleUrls: ["./employer-edit-job.component.scss"],
+    standalone: true,
+    imports: [NgIf, MatLegacyCardModule, ReactiveFormsModule, FormsModule, MatLegacyFormFieldModule, MatLegacyInputModule, MatLegacyRadioModule, MatLegacyChipsModule, NgFor, MatIconModule, MatLegacyButtonModule, RouterLink]
 })
 
 export class EmployerEditJobComponent implements OnInit, OnDestroy{
