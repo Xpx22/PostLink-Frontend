@@ -1,9 +1,9 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
-import { catchError, Observable, throwError } from "rxjs";
 
 import { ErrorDialog } from "../components/error-dialog/error.component";
+import { MatDialog } from "@angular/material/dialog";
+import { Observable, catchError, throwError } from "rxjs";
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor{

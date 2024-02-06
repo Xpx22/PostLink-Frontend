@@ -1,52 +1,50 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LegacyPageEvent as PageEvent, MatLegacyPaginatorModule } from '@angular/material/legacy-paginator';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyCardModule } from '@angular/material/legacy-card';
 import { NgIf, NgFor, SlicePipe } from '@angular/common';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { Subscription } from 'rxjs';
 
 @Component({
-    templateUrl: './employer-dashboard.component.html',
-    styleUrls: ['./employer-dashboard.component.scss'],
-    standalone: true,
-    imports: [NgIf, NgFor, MatLegacyCardModule, MatIconModule, MatLegacyPaginatorModule, SlicePipe]
+  templateUrl: './employer-dashboard.component.html',
+  styleUrls: ['./employer-dashboard.component.scss'],
+  standalone: true,
+  imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe],
 })
-
 export class EmployerDashboardComponent implements OnInit, OnDestroy {
   jobsList: any[] = [];
   totalJobPosts = 0;
   jobsPerPage = 10;
   currentPage = 1;
-  pageSizeOptions=[1,5,10,20,50];
-  private employerJobsSubscription: Subscription = new Subscription;
+  pageSizeOptions = [1, 5, 10, 20, 50];
+  private employerJobsSubscription: Subscription = new Subscription();
 
-  constructor(
-    private jobsService: JobsService,
-    private router: Router){}
+  constructor(private jobsService: JobsService, private router: Router) {}
 
-    ngOnInit(): void {
-      this.jobsService.getJobPostsByEmployer(this.jobsPerPage, this.currentPage);
-      this.employerJobsSubscription = this.jobsService.getEmployerJobsUpdateListener().subscribe( (jobs: {jobs: any[], jobsCount: number}) => {
+  ngOnInit(): void {
+    this.jobsService.getJobPostsByEmployer(this.jobsPerPage, this.currentPage);
+    this.employerJobsSubscription = this.jobsService
+      .getEmployerJobsUpdateListener()
+      .subscribe((jobs: { jobs: any[]; jobsCount: number }) => {
         this.totalJobPosts = jobs.jobsCount;
         this.jobsList = jobs.jobs;
       });
-    }
+  }
 
-    onChangedPage(pageData: PageEvent){
-      this.currentPage = pageData.pageIndex + 1;
-      this.jobsPerPage = pageData.pageSize;
-      this.jobsService.getJobPostsByEmployer(this.jobsPerPage, this.currentPage);
-    }
+  onChangedPage(pageData: PageEvent) {
+    this.currentPage = pageData.pageIndex + 1;
+    this.jobsPerPage = pageData.pageSize;
+    this.jobsService.getJobPostsByEmployer(this.jobsPerPage, this.currentPage);
+  }
 
-    onNavigateToJobDetails(job: JobPost){
-      this.router.navigate(["/employers/dashboard/"+ job._id + "/jobdetails"]);
-    }
+  onNavigateToJobDetails(job: JobPost) {
+    this.router.navigate(['/employers/dashboard/' + job._id + '/jobdetails']);
+  }
 
-    ngOnDestroy(): void {
-      this.employerJobsSubscription.unsubscribe();
-    }
+  ngOnDestroy(): void {
+    this.employerJobsSubscription.unsubscribe();
+  }
 }

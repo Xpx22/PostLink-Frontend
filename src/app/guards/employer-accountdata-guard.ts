@@ -1,10 +1,10 @@
-import { Injectable, OnDestroy, OnInit } from "@angular/core";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
+import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { Observable, Subscription } from "rxjs";
 
 import { AccountDataService } from "../services/account-data.service";
 import { ErrorDialog } from "../components/error-dialog/error.component";
+import { MatDialog } from "@angular/material/dialog";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class EmployerAccountDataGuard {

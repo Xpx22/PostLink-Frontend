@@ -1,12 +1,12 @@
 import { Component, Inject } from "@angular/core";
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogModule } from "@angular/material/legacy-dialog";
-import { MatLegacyButtonModule } from "@angular/material/legacy-button";
+import { MatButtonModule } from "@angular/material/button";
+import { MAT_DIALOG_DATA, MatDialogModule } from "@angular/material/dialog";
 
 @Component({
     templateUrl: "./error.component.html",
     styleUrls: ["./error.component.scss"],
     standalone: true,
-    imports: [MatLegacyDialogModule, MatLegacyButtonModule]
+    imports: [MatDialogModule, MatButtonModule]
 })
 
 export class ErrorDialog {

@@ -1,21 +1,20 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LegacyPageEvent as PageEvent, MatLegacyPaginatorModule } from '@angular/material/legacy-paginator';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 
 import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
 import { MatIconModule } from '@angular/material/icon';
-import { MatLegacyCardModule } from '@angular/material/legacy-card';
 import { NgIf, NgFor, SlicePipe } from '@angular/common';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-user-bookmark',
     templateUrl: './user-bookmark.component.html',
     styleUrls: ['./user-bookmark.component.scss'],
     standalone: true,
-    imports: [NgIf, NgFor, MatLegacyCardModule, MatIconModule, MatLegacyPaginatorModule, SlicePipe]
+    imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe]
 })
 export class UserBookmarkComponent implements OnInit, OnDestroy {
   jobsList: JobPost[] = [];
@@ -23,7 +22,7 @@ export class UserBookmarkComponent implements OnInit, OnDestroy {
   jobsPerPage = 10;
   currentPage = 1;
   pageSizeOptions=[1,5,10,20,50];
-  private userBookmarkSub: Subscription = new Subscription;
+  private userBookmarkSub: Subscription = new Subscription();
 
   constructor(
     private jobsService: JobsService,

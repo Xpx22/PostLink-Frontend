@@ -1,8 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
 
 
 import { ErrorDialog } from "../components/error-dialog/error.component";
@@ -11,6 +9,8 @@ import { Employer } from "../models/employer.model";
 import { User } from "../models/user.model";
 import { AuthData } from "../models/auth-data.model";
 import { environment } from "../../environments/environment";
+import { MatDialog } from "@angular/material/dialog";
+import { Subject } from "rxjs";
 
 const SIGNIN_BACKEND_URL = environment.apiUrl + "/signin/";
 const SIGNUP_BACKEND_URL = environment.apiUrl + "/signup/";

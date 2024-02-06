@@ -1,7 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
-import { Subject } from "rxjs";
 
 import { AuthService } from "./auth.service";
 import { ErrorDialog } from "../components/error-dialog/error.component";
@@ -9,6 +7,8 @@ import { SuccessDialog } from "../components/success-dialog/success.component";
 import { Employer } from "../models/employer.model";
 import { User } from "../models/user.model";
 import { environment } from "../../environments/environment";
+import { MatDialog } from "@angular/material/dialog";
+import { Subject } from "rxjs";
 
 const EMPLOYER_BACKEND_URL = environment.apiUrl + "/employers/";
 const USER_BACKEND_URL = environment.apiUrl + "/users/";
