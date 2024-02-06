@@ -7,12 +7,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgIf, NgFor, SlicePipe } from '@angular/common';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   templateUrl: './employer-dashboard.component.html',
   styleUrls: ['./employer-dashboard.component.scss'],
   standalone: true,
-  imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe],
+  imports: [
+    NgIf,
+    NgFor,
+    MatCardModule,
+    MatIconModule,
+    MatPaginatorModule,
+    SlicePipe,
+  ],
 })
 export class EmployerDashboardComponent implements OnInit, OnDestroy {
   jobsList: any[] = [];

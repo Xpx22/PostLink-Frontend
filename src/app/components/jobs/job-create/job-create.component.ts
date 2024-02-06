@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-post-create',
@@ -23,6 +25,8 @@ import { MatDialog } from '@angular/material/dialog';
     NgIf,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
+    MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,

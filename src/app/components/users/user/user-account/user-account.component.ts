@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 import { AuthService } from '../../../../services/auth.service';
 import { ErrorDialog } from '../../../error-dialog/error.component';
@@ -23,6 +24,7 @@ import { Subscription } from 'rxjs';
     NgIf,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

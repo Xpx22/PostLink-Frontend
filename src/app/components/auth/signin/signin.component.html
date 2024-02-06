@@ -4,12 +4,12 @@
   <div class="login-container">
     <mat-card id="signin-shadow">
       <form (submit)="onSignIn(loginForm)" #loginForm="ngForm">
-      <mat-form-field appearance="standard" color="accent" class="signin-field">
+      <mat-form-field appearance="outline" color="accent" class="signin-field">
         <mat-label><mat-icon>email</mat-icon> E-mail:</mat-label>
         <input matInput type="email" name="email" ngModel placeholder="E-mail:" #emailInput="ngModel" required email>
         <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="standard" color="accent" class="signin-field">
+      <mat-form-field appearance="outline" color="accent" class="signin-field">
         <mat-label><mat-icon>lock</mat-icon> Password:</mat-label>
         <input matInput type="password" name="password" ngModel placeholder="Password:" #passwordInput="ngModel" required>
         <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>

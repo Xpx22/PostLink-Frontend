@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-job-details',
@@ -20,6 +22,8 @@ import { Subscription } from 'rxjs';
   imports: [
     NgIf,
     MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
     MatIconModule,
     MatFormFieldModule,
     NgFor,

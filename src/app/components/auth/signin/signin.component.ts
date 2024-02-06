@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 import { AuthService } from '../../../services/auth.service';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,6 +22,7 @@ import { Subscription } from 'rxjs';
     NgIf,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

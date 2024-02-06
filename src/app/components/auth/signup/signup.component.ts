@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-signup',
@@ -22,6 +23,7 @@ import { Subscription } from 'rxjs';
     NgIf,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

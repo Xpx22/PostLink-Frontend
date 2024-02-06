@@ -2,14 +2,14 @@
   <mat-card id="company-card" *ngIf="!isLoading">
     <form (submit)="onSubmitCompanyDetails(employerForm)" #employerForm="ngForm">
       <div class="field-text">
-        <mat-form-field appearance="standard" color="accent">
+        <mat-form-field appearance="outline" color="accent">
           <mat-label><mat-icon>assignment_ind</mat-icon> Company name:</mat-label>
           <input matInput type="text" name="companyName" ngModel required>
           <mat-error>Please enter a valid company name</mat-error>
         </mat-form-field>
       </div>
       <div class="field-text">
-        <mat-form-field appearance="standard" color="accent">
+        <mat-form-field appearance="outline" color="accent">
           <mat-hint>example: +36301234567</mat-hint>
           <mat-label><mat-icon>phone</mat-icon> Phone number:</mat-label>
           <input matInput type="text" name="phoneNumber" ngModel required placeholder="example: +36301234567">
@@ -17,18 +17,18 @@
         </mat-form-field>
       </div>
       <div class="field-text">
-        <mat-form-field appearance="standard" color="accent">
+        <mat-form-field appearance="outline" color="accent">
           <mat-hint>example: www.example.com</mat-hint>
           <mat-label><mat-icon>language</mat-icon> Website:</mat-label>
           <input matInput type="text" name="website" ngModel placeholder="example: www.example.com">
         </mat-form-field>
       </div>
       <div class="field-text location-container">
-        <mat-form-field appearance="standard" color="accent" id="city-field">
+        <mat-form-field appearance="outline" color="accent" id="city-field">
           <mat-label><mat-icon>location_city</mat-icon> City:</mat-label>
           <input matInput type="text" name="city" ngModel placeholder="example: Budapest">
         </mat-form-field>
-        <mat-form-field appearance="standard" color="accent" id="country-field">
+        <mat-form-field appearance="outline" color="accent" id="country-field">
           <mat-label><mat-icon>public</mat-icon> Country:</mat-label>
           <input matInput type="text" name="country" ngModel placeholder="example: Hungary">
         </mat-form-field>

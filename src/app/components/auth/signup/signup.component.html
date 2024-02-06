@@ -4,22 +4,22 @@
   <div class="register-container" *ngIf="!isLoading">
     <mat-card id="signup-shadow">
       <form (submit)="onSignUp(registerForm)" #registerForm="ngForm">
-        <mat-form-field appearance="standard" color="accent" class="signup-field">
+        <mat-form-field appearance="outline" color="accent" class="signup-field">
           <mat-label><mat-icon>email</mat-icon> E-mail:</mat-label>
           <input matInput type="email" name="email" ngModel placeholder="E-mail:" #emailInput="ngModel" required email>
           <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="standard" color="accent" class="signup-field">
+        <mat-form-field appearance="outline" color="accent" class="signup-field">
           <mat-label><mat-icon>lock</mat-icon> Password:</mat-label>
           <input matInput type="password" name="password" ngModel placeholder="Password:" #passwordInput="ngModel" required>
           <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="standard" color="accent" class="signup-field">
+        <mat-form-field appearance="outline" color="accent" class="signup-field">
           <mat-label><mat-icon>lock</mat-icon> Password Confirmation:</mat-label>
           <input matInput type="password" name="passwordConfirm" ngModel placeholder="Password Confirmation:" #passwordConfirmInput="ngModel" required>
           <mat-error *ngIf="passwordConfirmInput.invalid">Please enter a valid password.</mat-error>
         </mat-form-field>
-        <!-- <mat-form-field appearance="standard" color="accent" *ngIf="isEmployer">
+        <!-- <mat-form-field appearance="outline" color="accent" *ngIf="isEmployer">
           <mat-label>Company Name</mat-label>
           <input matInput type="text" name="companyName" ngModel placeholder="Company:" #companyNameInput="ngModel" required>
           <mat-error *ngIf="passwordConfirmInput.invalid">Please enter a valid password.</mat-error>

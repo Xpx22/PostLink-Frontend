@@ -45,21 +45,21 @@
       <div class="table-item">
         <mat-label class="job-label">Required Skills:</mat-label>
         <div class="skills-div" *ngIf="job.requiredSkills">
-          <mat-chip-list>
+          <!-- <mat-chip-list>
             <mat-chip class="skills-list" *ngFor="let rskill of job.requiredSkills">
               {{ rskill }}
             </mat-chip>
-          </mat-chip-list>
+          </mat-chip-list> -->
           <h4 *ngIf="!job.requiredSkills"> No required skills!</h4>
         </div>
 
         <mat-label class="job-label">Good to have Skills:</mat-label>
         <div class="skills-div">
-          <mat-chip-list>
+          <!-- <mat-chip-list>
             <mat-chip class="skills-list" *ngFor="let gskill of job.goodToHaveSkills">
               {{ gskill }}
             </mat-chip>
-          </mat-chip-list>
+          </mat-chip-list> -->
           <!-- <h4 *ngIf="!job.goodToHaveSkills"> No required skills!</h4> -->
         </div>
       </div>

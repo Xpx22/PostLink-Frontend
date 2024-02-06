@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { MatCardModule } from '@angular/material/card';
 
 import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
     templateUrl: './user-bookmark.component.html',
     styleUrls: ['./user-bookmark.component.scss'],
     standalone: true,
-    imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe]
+    imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe, MatCardModule]
 })
 export class UserBookmarkComponent implements OnInit, OnDestroy {
   jobsList: JobPost[] = [];

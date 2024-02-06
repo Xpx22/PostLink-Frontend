@@ -2,7 +2,7 @@
   <mat-card id="company-card" *ngIf="!isLoading">
     <form (submit)="onSubmitUserDetails(userForm)" #userForm="ngForm">
       <div class="field-text">
-        <mat-form-field appearance="standard" color="accent">
+        <mat-form-field appearance="outline" color="accent">
           <mat-label><mat-icon>account_circle</mat-icon> Full name:</mat-label>
           <input matInput type="text" name="fullname" ngModel required>
           <mat-error>Please enter a valid full name</mat-error>
@@ -10,7 +10,7 @@
       </div>
 
       <div class="field-text">
-        <mat-form-field appearance="standard" color="accent">
+        <mat-form-field appearance="outline" color="accent">
           <mat-hint>example: +36301234567</mat-hint>
           <mat-label><mat-icon>phone</mat-icon> Phone number:</mat-label>
           <input matInput type="text" name="phoneNumber" ngModel required placeholder="example: +36301234567">

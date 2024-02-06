@@ -12,8 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from '../../../../models/user.model';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   templateUrl: './employer-dashboard-jobdetail.component.html',
@@ -21,6 +22,8 @@ import { User } from '../../../../models/user.model';
   standalone: true,
   imports: [
     NgIf,
+    MatCardModule,
+    MatChipsModule,
     MatButtonModule,
     MatIconModule,
     MatFormFieldModule,

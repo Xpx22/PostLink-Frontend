@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { AccountDataService } from '../../../../services/account-data.service';
 import { ErrorDialog } from '../../../error-dialog/error.component';
@@ -14,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   templateUrl: './employer-account.component.html',
@@ -23,6 +25,8 @@ import { MatDialog } from '@angular/material/dialog';
     NgIf,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
+    MatChipsModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
@@ -13,7 +14,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './user-dashboard.component.html',
   styleUrls: ['./user-dashboard.component.scss'],
   standalone: true,
-  imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe],
+  imports: [NgIf, NgFor, MatIconModule, MatPaginatorModule, SlicePipe, MatCardModule],
 })
 export class UserDashboardComponent {
   jobsList: any[] = [];

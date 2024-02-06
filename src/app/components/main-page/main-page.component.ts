@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   templateUrl: './main-page.component.html',
@@ -20,6 +21,7 @@ import { Subscription } from 'rxjs';
   imports: [
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,

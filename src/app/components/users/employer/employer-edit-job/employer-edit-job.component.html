@@ -2,7 +2,7 @@
   <mat-card id="create-job-card">
       <form (submit)="onUpdatePost(jobpostForm)" #jobpostForm="ngForm" (keydown.enter)="$event.preventDefault()">
         <div id="post-name">
-          <mat-form-field appearance="standard" color="warn">
+          <mat-form-field appearance="outline" color="warn">
             <mat-label>Position Name: (required)</mat-label>
             <input matInput type="text" name="positionName" ngModel required>
             <mat-error>Please enter a valid position name</mat-error>
@@ -10,14 +10,14 @@
         </div>
         <div id="salary">
           <div class="flex-item">
-            <mat-form-field appearance="standard" color="accent">
+            <mat-form-field appearance="outline" color="accent">
               <mat-label>Salary Minimum: (required)</mat-label>
               <input matInput type="number" name="salaryMin" ngModel required min="0">
               <mat-error>Invalid salary minimum</mat-error>
             </mat-form-field>
           </div>
           <div class="flex-item">
-            <mat-form-field appearance="standard" color="accent">
+            <mat-form-field appearance="outline" color="accent">
               <mat-label>Salary maximum: (required)</mat-label>
               <input matInput type="number" name="salaryMax" ngModel required min="0">
               <mat-error>Invalid salary maximum</mat-error>
@@ -39,9 +39,9 @@
 
           <div class="table-job-item">
             <mat-label>Required Skills: (separated by commas or enter)</mat-label>
-            <mat-form-field class="required-chip-list" appearance="standard" color="accent">
+            <mat-form-field class="required-chip-list" appearance="outline" color="accent">
               <mat-label>Skills:</mat-label>
-              <mat-chip-list #chipList>
+              <!-- <mat-chip-list #chipList>
                 <mat-chip *ngFor="let skill of requiredSkills" (removed)="removeReq(skill)">
                   {{skill}}
                   <button matChipRemove>
@@ -51,14 +51,14 @@
                 <input [matChipInputFor]="chipList"
                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                        (matChipInputTokenEnd)="addReq($event)">
-              </mat-chip-list>
+              </mat-chip-list> -->
             </mat-form-field>
             <br>
             <br>
             <mat-label>Good to have skills: (separated by commas or enter)</mat-label>
-            <mat-form-field class="required-chip-list" appearance="standard" color="accent">
+            <mat-form-field class="required-chip-list" appearance="outline" color="accent">
               <mat-label>Skills:</mat-label>
-              <mat-chip-list #chipListGood>
+              <!-- <mat-chip-list #chipListGood>
                 <mat-chip *ngFor="let skill of goodToHaveSkills" (removed)="removeGood(skill)">
                   {{skill}}
                   <button matChipRemove>
@@ -68,7 +68,7 @@
                 <input [matChipInputFor]="chipListGood"
                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                        (matChipInputTokenEnd)="addGood($event)">
-              </mat-chip-list>
+              </mat-chip-list> -->
             </mat-form-field>
           </div>
 

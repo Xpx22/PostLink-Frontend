@@ -2,6 +2,7 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Params, RouterLink } from '@angular/router';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { JobPost } from '../../../../models/job.model';
 import { JobsService } from '../../../../services/jobs.service';
@@ -14,6 +15,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   templateUrl: './employer-edit-job.component.html',
@@ -23,6 +25,8 @@ import { Subscription } from 'rxjs';
     NgIf,
     ReactiveFormsModule,
     FormsModule,
+    MatCardModule,
+    MatChipsModule,
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
